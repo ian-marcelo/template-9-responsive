@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>Casino Responsive Template 9</title>
+
+    <!-- Icons for this template -->
+    <link href="assets/fonts/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Stylesheet -->
+    <!-- build:css -->
+    <link href="assets/css/app.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="banner">
+                <img :src="image">
+                <div id="banner-text">
+                    <h1>{{heading}}</h1>
+                    <p>{{catchphrase}}</p>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light nav-gradient">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto nav-fill w-100" id="navbar">
+                  <li class="nav-item" v-for="link in links"><a :href="link" class="nav-link link">{{ link }}</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col">
+        <div id="topcasinos" class="row top-casino">
+          <div v-for="topcasino in topcasinos" class="col-lg-3 col-sm-6 col-md-3 col-xs-12">
+            <h4 :style="{background: topcasino.background}">{{topcasino.name}}</h4>
+            <img :src="topcasino.image" />
+            <div class="linksanddl">
+                <img :src="iconstar" class="iconstar"/>
+                <a :href="topcasino.link">Visit Now</a>
+                <img :src="iconstar" class="iconstar"/>
+                <a :href="topcasino.file" download>Download Now</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="container divider"><hr /></div>
+
+<div class="container">
+    <div class="row">
+        <div class="clearfix">
+
+            <div class="col-lg-9 float-lg-right" id="main">
+                <div class="col welcome-message">
+                    <div class="row">
+                        <div class="col-lg-12"><h2>Welcome To Online Gambling Website</h2></div>
+                        <div class="clearfix">
+                            <div class="col-lg-4 col-sm-4 col-6 float-lg-right">
+                                <img src="assets/img/welcome-pic.jpg" />
+                            </div>
+                            <div class="col-lg-8 float-left">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in mauris at sem mattis elemen tump Etiam erat nunc, vene natis quis ultrices vulpu tate, iaculis ac odio. Nul lam non laoreet sapien. Morbi adipiscing, lacus non tempus port acl ligula tellus pulvinar neque, a sodales ligula nisl eget.</p>
+                                <p>Aliquam cursus, lorem vitae blandit lobortis, felis mi laor eet arcu, ac vehic ula ig ula elit nec maurisp. Integer quis mauris sed odio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-lg-12"><h2>Featured Online Casinos</h2></div>
+                    <div class="row bgnone" id="featonlinecasinos">
+                        <div class="container" v-for="featonlinecasino in featonlinecasinos">
+                            <div class="row feat-online-casino">
+                            <div class="col-lg-3 col-sm-4 col-6"><img :src="featonlinecasino.image" /></div>
+                                <div class="col-lg-9">
+                                    <p>{{featonlinecasino.excerpt}}</p>
+                                    <div class="links">
+                                        <img :src="iconarrow" /> <a :href="featonlinecasino.visit">Visit Casino</a>
+                                        <img :src="iconarrow" /> <a :href="featonlinecasino.review">Full Review</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-lg-12"><h2>Poker Videos</h2></div>
+                    <div class="col-lg-12">
+                        <div id="poker-videos">
+                            <div class="row bgnone">
+                                <div class="col-lg-6">
+                                    <div class="vid">
+                                        <h3>Featured Poker Video</h3>
+                                        <img src="assets/img/video.jpg" />
+                                        <a href="#">View Full Video</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row bgnone col" id="other-videos">
+                                        <div class="col-lg-12"><img src="assets/img/bullet.png" class="bullet" /><h3>Other Videos</h3></div>
+                                        <div class="container" v-for="othervideo in othervideos">
+                                            <div class="row bgnone">
+                                            <div class="col-lg-3 col-sm-4 col-6"><img :src="othervideo.image" /></div>
+                                                <div class="col-lg-9">
+                                                    <a :href="othervideo.link">{{othervideo.name}}</a>
+                                                    <p>{{othervideo.excerpt}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3" id="sidebar">
+                <h3>Casino Reviews</h3>
+                <ul id="reviews">
+                    <li v-for="review in reviews">
+                        <img :src="iconarrow" />
+                        <a :href="review.sidebarlink" class="nav-link update">{{ review.label }}</a>
+                    </li>
+                </ul>
+                <h3>Latest News</h3>
+                <ul id="news">
+                    <li v-for="update in updates">
+                        <img :src="iconarrow" />
+                        <a :href="update.sidebarlink" class="nav-link update">{{ update.label }}</a>
+                    </li>
+                </ul>
+                <h3>Poker Reviews</h3>
+                <ul id="poker-reviews">
+                    <li v-for="pokerreview in pokerreviews">
+                        <img :src="iconarrow" />
+                        <a :href="pokerreview.sidebarlink" class="nav-link update">{{ pokerreview.label }}</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="footer">
+        <nav class="navbar-expand-lg navbar-light bg-light nav-gradient">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav-fill w-100" id="footernavbar">
+              <li class="nav-item" v-for="footernavbarlink in footernavbarlinks"><a :href="footernavbarlink.link" class="nav-link link">{{ footernavbarlink.label }}</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="copyright">Template created by <a href="#">casino templates</a> &amp; <a href="#">usaonlinecasinos.org</a></div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="assets/js/vendor/jquery.slim.min.js"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<!-- build:js -->
+<script src="assets/js/app.js"></script>
+<!-- endbuild -->
+</body>
+</html>
